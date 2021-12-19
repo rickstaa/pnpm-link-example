@@ -4,7 +4,7 @@
 
 [![NPM](https://img.shields.io/npm/v/pnpm-link-example.svg)](https://www.npmjs.com/package/pnpm-link-example) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Small example on how to use [pnpm](https://pnpm.io/) linking to use a local library.
+Small example on how to use [pnpm](https://pnpm.io/) linking to use a local library. Create with [create-react-library](https://github.com/transitive-bullshit/create-react-library).
 
 ## Pnpm link
 

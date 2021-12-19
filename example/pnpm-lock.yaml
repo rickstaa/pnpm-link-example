@@ -1,0 +1,30 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@babel/plugin-syntax-object-rest-spread': ^7.8.3
+  react: file:../node_modules/react
+  react-dom: file:../node_modules/react-dom
+  react-scripts: file:../node_modules/react-scripts
+
+dependencies:
+  react: link:../node_modules/react
+  react-dom: link:../node_modules/react-dom
+  react-scripts: link:../node_modules/react-scripts
+
+devDependencies:
+  '@babel/plugin-syntax-object-rest-spread': 7.8.3
+
+packages:
+
+  /@babel/helper-plugin-utils/7.16.5:
+    resolution: {integrity: sha512-59KHWHXxVA9K4HNF4sbHCf+eJeFe0Te/ZFGqBT4OjXhrwvA04sGfaEGsVTdsjoszq0YTP49RC9UKe5g8uN2RwQ==}
+    engines: {node: '>=6.9.0'}
+    dev: true
+
+  /@babel/plugin-syntax-object-rest-spread/7.8.3:
+    resolution: {integrity: sha512-XoqMijGZb9y3y2XskN+P1wUGiVwWZ5JmoDRwx5+3GmEplNyVM2s2Dg8ILFQm8rWM48orGy5YpI5Bl8U1y7ydlA==}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/helper-plugin-utils': 7.16.5
+    dev: true
