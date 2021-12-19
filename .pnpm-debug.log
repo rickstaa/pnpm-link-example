@@ -1,0 +1,23 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: clean",
+      "code": "ENOENT",
+      "stack": "Error: not found: clean\n    at getNotFoundError (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:41440:51)\n    at Function.whichSync [as sync] (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:41517:13)\n    at getCommandAbsolutePathSync (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:43082:44)\n    at default_1 (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:43091:32)\n    at /home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:179676:39"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "/home/ricks/Development/personal/pnpm-link-example",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: clean",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: clean\n    at getNotFoundError (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:41440:51)\n    at Function.whichSync [as sync] (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:41517:13)\n    at getCommandAbsolutePathSync (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:43082:44)\n    at default_1 (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:43091:32)\n    at /home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:179676:39"
+    }
+  }
+}
