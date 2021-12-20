@@ -2,22 +2,439 @@
   "0 debug pnpm:scope": {
     "selected": 1
   },
-  "1 info pnpm": {
-    "err": {
-      "name": "Error",
-      "message": "not found: clean",
-      "code": "ENOENT",
-      "stack": "Error: not found: clean\n    at getNotFoundError (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:41440:51)\n    at Function.whichSync [as sync] (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:41517:13)\n    at getCommandAbsolutePathSync (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:43082:44)\n    at default_1 (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:43091:32)\n    at /home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:179676:39"
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "pnpm-link-example",
+      "version": "1.0.0",
+      "description": "Made with create-react-library",
+      "author": "rickstaa",
+      "license": "MIT",
+      "repository": "rickstaa/pnpm-link-example",
+      "main": "dist/index.js",
+      "module": "dist/index.modern.js",
+      "source": "src/index.js",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "build": "microbundle-crl --no-compress --format modern,cjs",
+        "start": "microbundle-crl watch --no-compress --format modern,cjs",
+        "prepare": "run-s build",
+        "test": "run-s test:unit test:lint test:build",
+        "test:build": "run-s build",
+        "test:lint": "eslint .",
+        "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+        "test:watch": "react-scripts test --env=jsdom",
+        "predeploy": "cd example && pnpm install && pnpm run build",
+        "deploy": "gh-pages -d example/build",
+        "clean": "rimraf node_modules dist"
+      },
+      "peerDependencies": {
+        "react": "^16.0.0"
+      },
+      "devDependencies": {
+        "microbundle-crl": "^0.13.10",
+        "babel-eslint": "^10.0.3",
+        "cross-env": "^7.0.2",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-config-standard": "^14.1.0",
+        "eslint-config-standard-react": "^9.2.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-node": "^11.0.0",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-react": "^7.17.0",
+        "eslint-plugin-standard": "^4.0.1",
+        "gh-pages": "^2.2.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.0.4",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-scripts": "^3.4.1"
+      },
+      "files": [
+        "dist"
+      ]
+    },
+    "prefix": "/home/ricks/Development/personal/pnpm-link-example"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/home/ricks/.pnpm-store/v3",
+    "virtualStoreDir": "/home/ricks/Development/personal/pnpm-link-example/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/home/ricks/Development/personal/pnpm-link-example",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/microbundle-crl/0.13.11",
+    "wanted": {
+      "dependentId": ".",
+      "name": "microbundle-crl",
+      "rawSpec": "^0.13.10"
     }
   },
-  "2 error pnpm": {
-    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
-    "prefix": "/home/ricks/Development/personal/pnpm-link-example",
+  "5 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/babel-eslint/10.1.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "babel-eslint",
+      "rawSpec": "^10.0.3"
+    }
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/cross-env/7.0.3",
+    "wanted": {
+      "dependentId": ".",
+      "name": "cross-env",
+      "rawSpec": "^7.0.2"
+    }
+  },
+  "7 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint/6.8.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint",
+      "rawSpec": "^6.8.0"
+    }
+  },
+  "8 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-prettier/6.15.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-config-prettier",
+      "rawSpec": "^6.7.0"
+    }
+  },
+  "9 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-standard/14.1.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-config-standard",
+      "rawSpec": "^14.1.0"
+    }
+  },
+  "10 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-standard-react/9.2.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-config-standard-react",
+      "rawSpec": "^9.2.0"
+    }
+  },
+  "11 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-import/2.25.3",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-import",
+      "rawSpec": "^2.18.2"
+    }
+  },
+  "12 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-node/11.1.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-node",
+      "rawSpec": "^11.0.0"
+    }
+  },
+  "13 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-prettier/3.4.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-prettier",
+      "rawSpec": "^3.1.1"
+    }
+  },
+  "14 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-promise/4.3.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-promise",
+      "rawSpec": "^4.2.1"
+    }
+  },
+  "15 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-react/7.27.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-react",
+      "rawSpec": "^7.17.0"
+    }
+  },
+  "16 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-plugin-standard/4.1.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-plugin-standard",
+      "rawSpec": "^4.0.1"
+    }
+  },
+  "17 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/gh-pages/2.2.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "gh-pages",
+      "rawSpec": "^2.2.0"
+    }
+  },
+  "18 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/npm-run-all/4.1.5",
+    "wanted": {
+      "dependentId": ".",
+      "name": "npm-run-all",
+      "rawSpec": "^4.1.5"
+    }
+  },
+  "19 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/prettier/2.5.1",
+    "wanted": {
+      "dependentId": ".",
+      "name": "prettier",
+      "rawSpec": "^2.0.4"
+    }
+  },
+  "20 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react/16.14.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react",
+      "rawSpec": "^16.13.1"
+    }
+  },
+  "21 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react-dom/16.14.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-dom",
+      "rawSpec": "^16.13.1"
+    }
+  },
+  "22 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react-scripts/3.4.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-scripts",
+      "rawSpec": "^3.4.1"
+    }
+  },
+  "23 debug pnpm:deprecation": {
+    "deprecated": "babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.",
+    "depth": 0,
+    "pkgId": "registry.npmjs.org/babel-eslint/10.1.0",
+    "pkgName": "babel-eslint",
+    "pkgVersion": "10.1.0",
+    "prefix": "/home/ricks/Development/personal/pnpm-link-example"
+  },
+  "24 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/babel-eslint/10.1.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "25 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/babel-eslint/10.1.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "26 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/microbundle-crl/0.13.11",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "27 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/microbundle-crl/0.13.11",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "28 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cross-env/7.0.3",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "29 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/cross-env/7.0.3",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "30 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/6.8.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "31 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/6.8.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "32 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/6.15.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "33 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-prettier/6.15.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "34 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-standard/14.1.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "35 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-standard/14.1.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "36 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-node/11.1.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "37 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-node/11.1.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "38 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-standard-react/9.2.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "39 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-standard-react/9.2.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "40 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-prettier/3.4.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "41 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-prettier/3.4.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "42 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-import/2.25.3",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "43 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-import/2.25.3",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "44 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-react/7.27.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "45 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-react/7.27.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "46 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gh-pages/2.2.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "47 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/gh-pages/2.2.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "48 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-standard/4.1.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "49 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-standard/4.1.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "50 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.5.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "51 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/prettier/2.5.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "52 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-dom/16.14.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "53 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-dom/16.14.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "54 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react/16.14.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "55 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react/16.14.0",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "56 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-promise/4.3.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "57 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-plugin-promise/4.3.1",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "58 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/npm-run-all/4.1.5",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "59 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/npm-run-all/4.1.5",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "60 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-scripts/3.4.4",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "resolved"
+  },
+  "61 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-scripts/3.4.4",
+    "requester": "/home/ricks/Development/personal/pnpm-link-example",
+    "status": "found_in_store"
+  },
+  "62 error pnpm": {
+    "code": "ERR_PNPM_FETCH_404",
+    "hint": "rimfraf is not in the npm registry, or you have no permission to fetch it.\n\nNo authorization header was set for the request.",
+    "request": {
+      "url": "https://registry.npmjs.org/rimfraf"
+    },
+    "response": {
+      "size": 0
+    },
+    "pkgName": "rimfraf",
+    "pkgsStack": [],
     "err": {
       "name": "pnpm",
-      "message": "not found: clean",
-      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
-      "stack": "Error: not found: clean\n    at getNotFoundError (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:41440:51)\n    at Function.whichSync [as sync] (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:41517:13)\n    at getCommandAbsolutePathSync (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:43082:44)\n    at default_1 (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:43091:32)\n    at /home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:179676:39"
+      "message": "GET https://registry.npmjs.org/rimfraf: Not Found - 404",
+      "code": "ERR_PNPM_FETCH_404",
+      "stack": "pnpm: GET https://registry.npmjs.org/rimfraf: Not Found - 404\n    at RetryOperation._fn (/home/ricks/.nvm/versions/node/v16.13.1/lib/node_modules/pnpm/dist/pnpm.cjs:85375:19)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
     }
   }
 }
